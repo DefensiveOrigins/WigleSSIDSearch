@@ -56,6 +56,14 @@ def fetch_wigle_data(ssid, token_name, api_token, max_results):
     return all_results
 
 
+def filter_case_sensitive(results, target_ssid):
+    filtered = [entry for entry in results if entry.get('ssid') == target_ssid]
+    print(f"[*] Case-sensitive filtering enabled:")
+    print(f"    Total fetched: {len(results)}")
+    print(f"    Matched exact SSID '{target_ssid}': {len(filtered)}")
+    return filtered
+
+
 def save_as_json(results, output_file):
     with open(output_file, 'w') as f:
         json.dump(results, f, indent=2)
@@ -98,6 +106,7 @@ def main():
     parser.add_argument('--output', default=None, help='Output file (default: <SSID>_wigle_results.json or .kml)')
     parser.add_argument('--max', type=int, default=1000, help='Maximum number of records to fetch (default: 1000)')
     parser.add_argument('--format', choices=['json', 'kml'], default='json', help='Output format: json (default) or kml')
+    parser.add_argument('--exact-case', action='store_true', help='Enable case-sensitive filtering on SSID matches')
 
     args = parser.parse_args()
 
@@ -106,6 +115,9 @@ def main():
         output_file = f"{args.ssid}_wigle_results.{args.format}"
 
     results = fetch_wigle_data(args.ssid, args.token_name, args.token, args.max)
+
+    if args.exact_case:
+        results = filter_case_sensitive(results, args.ssid)
 
     if args.format == 'json':
         save_as_json(results, output_file)
