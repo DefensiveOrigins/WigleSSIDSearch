@@ -46,6 +46,8 @@ Argument	Description
 --format	Output format: json (default) or kml
 --output	Output filename (defaults to <SSID>_wigle_results.json/kml)
 --max	Maximum number of records to retrieve (default: 1000)
+--exact-case Match the SSID with case sensitivity.  
+
 
 # Example
 
