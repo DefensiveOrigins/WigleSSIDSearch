@@ -7,6 +7,10 @@ This script handles pagination, API token-based authentication, and cleanly outp
 Your  API token name and token can be found here: 
 https://wigle.net/account
 
+# Install /w PIP
+```
+pip install wigle-ssid-search
+```
 
 ---
 
@@ -31,6 +35,8 @@ https://wigle.net/account
 # Useage
 ```
 python WigleSearch.py --ssid "YourSSID" --token-name "YourTokenName" --token "YourToken" [--format json|kml] [--output filename] [--max N]
+
+wigle-ssid-search --ssid "YourSSID" --token-name "YourTokenName" --token "YourToken" [--format json|kml] [--output filename] [--max N]
 ```
 
 ## Required arguments:
@@ -55,12 +61,16 @@ Search for SSID MyNetwork using your API token.  Export to KML that can be impor
 
 ```
 python WigleSearch.py --ssid "MyNetwork" --token-name "TOKENNAME" --token "YUORTOKEN" --format kml
+
+wigle-ssid-search --ssid "MyNetwork" --token-name "TOKENNAME" --token "YUORTOKEN" --format kml
 ```
 
 Search for SSID MyNetwork using your API token.  Export to JSON format.
 
 ```
 python WigleSearch.py --ssid "MyNetwork" --token-name "TOKENNAME" --token "YUORTOKEN" --format json --output wifi_results.json
+
+wigle-ssid-search --ssid "MyNetwork" --token-name "TOKENNAME" --token "YUORTOKEN" --format json --output wifi_results.json
 ```
 
 # Output Notes
