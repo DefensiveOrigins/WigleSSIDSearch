@@ -61,7 +61,7 @@ Search for SSID MyNetwork using your API token.  Export to KML that can be impor
 
 ```
 python WigleSearch.py --ssid "MyNetwork" --token-name "TOKENNAME" --token "YUORTOKEN" --format kml
-
+# Or with PIP:
 wigle-ssid-search --ssid "MyNetwork" --token-name "TOKENNAME" --token "YUORTOKEN" --format kml
 ```
 
@@ -69,7 +69,7 @@ Search for SSID MyNetwork using your API token.  Export to JSON format.
 
 ```
 python WigleSearch.py --ssid "MyNetwork" --token-name "TOKENNAME" --token "YUORTOKEN" --format json --output wifi_results.json
-
+# Or with PIP:
 wigle-ssid-search --ssid "MyNetwork" --token-name "TOKENNAME" --token "YUORTOKEN" --format json --output wifi_results.json
 ```
 
