@@ -1,49 +1,22 @@
 [build-system]
-requires = ["setuptools>=69", "wheel"]
+requires = [ "setuptools>=69", "wheel",]
 build-backend = "setuptools.build_meta"
 
 [project]
 name = "wigle-ssid-search"
-version = "0.1.0"
+version = "0.1.1"
 description = "Command-line tool for querying the WiGLE API for SSIDs and exporting results as JSON or KML."
 readme = "README.md"
 requires-python = ">=3.7"
-license = { text = "MIT" }
-authors = [
-  { name = "Defensive Origins", email = "info@defensiveorigins.com" }
-]
-keywords = [
-  "wigle",
-  "wifi",
-  "wireless",
-  "ssid",
-  "kml",
-  "json",
-  "mapping",
-  "geolocation"
-]
-classifiers = [
-  "Programming Language :: Python",
-  "Programming Language :: Python :: 3",
-  "Programming Language :: Python :: 3 :: Only",
-  "Programming Language :: Python :: 3.7",
-  "Programming Language :: Python :: 3.8",
-  "Programming Language :: Python :: 3.9",
-  "Programming Language :: Python :: 3.10",
-  "Programming Language :: Python :: 3.11",
-  "Programming Language :: Python :: 3.12",
-  "License :: OSI Approved :: MIT License",
-  "Operating System :: OS Independent",
-  "Environment :: Console",
-  "Topic :: Internet",
-  "Topic :: Utilities",
-  "Topic :: Scientific/Engineering :: GIS"
-]
+keywords = [ "wigle", "wifi", "wireless", "ssid", "kml", "json", "mapping", "geolocation",]
+classifiers = [ "Programming Language :: Python", "Programming Language :: Python :: 3", "Programming Language :: Python :: 3 :: Only", "Programming Language :: Python :: 3.7", "Programming Language :: Python :: 3.8", "Programming Language :: Python :: 3.9", "Programming Language :: Python :: 3.10", "Programming Language :: Python :: 3.11", "Programming Language :: Python :: 3.12", "License :: OSI Approved :: MIT License", "Operating System :: OS Independent", "Environment :: Console", "Topic :: Internet", "Topic :: Utilities", "Topic :: Scientific/Engineering :: GIS",]
+dependencies = [ "requests>=2.0.0",]
+[[project.authors]]
+name = "Defensive Origins"
+email = "info@defensiveorigins.com"
 
-# Adjust this list after checking WigleSearch.py imports.
-dependencies = [
-  "requests>=2.0.0"
-]
+[project.license]
+text = "MIT"
 
 [project.urls]
 Homepage = "https://github.com/DefensiveOrigins/WigleSSIDSearch"
@@ -51,9 +24,7 @@ Source = "https://github.com/DefensiveOrigins/WigleSSIDSearch"
 Issues = "https://github.com/DefensiveOrigins/WigleSSIDSearch/issues"
 
 [project.scripts]
-# This is what users will run: `wigle-ssid-search ...`
 wigle-ssid-search = "WigleSearch:main"
 
 [tool.setuptools]
-# Single-module project — no package dir, just WigleSearch.py
-py-modules = ["WigleSearch"]
+py-modules = [ "WigleSearch",]
